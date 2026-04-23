@@ -1,0 +1,213 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: oklch(0.12 0.02 280);
+  --foreground: oklch(0.98 0 0);
+  --card: oklch(0.15 0.02 280);
+  --card-foreground: oklch(0.98 0 0);
+  --popover: oklch(0.15 0.02 280);
+  --popover-foreground: oklch(0.98 0 0);
+  --primary: oklch(0.65 0.25 25);
+  --primary-foreground: oklch(0.98 0 0);
+  --secondary: oklch(0.75 0.2 50);
+  --secondary-foreground: oklch(0.1 0 0);
+  --muted: oklch(0.25 0.02 280);
+  --muted-foreground: oklch(0.7 0 0);
+  --accent: oklch(0.7 0.22 340);
+  --accent-foreground: oklch(0.98 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.577 0.245 27.325);
+  --border: oklch(0.3 0.03 280);
+  --input: oklch(0.25 0.02 280);
+  --ring: oklch(0.65 0.25 25);
+  --chart-1: oklch(0.65 0.25 25);
+  --chart-2: oklch(0.75 0.2 50);
+  --chart-3: oklch(0.7 0.22 340);
+  --chart-4: oklch(0.8 0.18 90);
+  --chart-5: oklch(0.6 0.2 0);
+  --radius: 0.625rem;
+  
+  /* Casino theme colors */
+  --neon-red: oklch(0.65 0.25 25);
+  --neon-orange: oklch(0.75 0.2 50);
+  --neon-yellow: oklch(0.85 0.18 90);
+  --neon-pink: oklch(0.7 0.22 340);
+  --gold: oklch(0.8 0.15 85);
+  --casino-dark: oklch(0.1 0.02 280);
+  --casino-surface: oklch(0.15 0.02 280);
+}
+
+@theme inline {
+  --font-sans: var(--font-mono);
+  --font-mono: var(--font-mono);
+  --font-display: var(--font-display);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  
+  /* Casino colors for Tailwind */
+  --color-neon-red: var(--neon-red);
+  --color-neon-orange: var(--neon-orange);
+  --color-neon-yellow: var(--neon-yellow);
+  --color-neon-pink: var(--neon-pink);
+  --color-gold: var(--gold);
+  --color-casino-dark: var(--casino-dark);
+  --color-casino-surface: var(--casino-surface);
+}
+
+.heading-gradient-soft {
+  background: linear-gradient(135deg, var(--foreground), var(--gold));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 6px var(--gold));
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Slot machine reel animation */
+@keyframes slot-spin {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-100%); }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { 
+    filter: drop-shadow(0 0 8px var(--neon-red)) drop-shadow(0 0 16px var(--neon-orange));
+  }
+  50% { 
+    filter: drop-shadow(0 0 16px var(--neon-red)) drop-shadow(0 0 32px var(--neon-orange));
+  }
+}
+
+@keyframes card-float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(2deg); }
+}
+
+@keyframes card-celebration {
+  0% { transform: translateY(0) rotate(0deg) scale(1); opacity: 1; }
+  25% { transform: translateY(-100px) rotate(15deg) scale(1.1); }
+  50% { transform: translateY(-200px) rotate(-10deg) scale(0.9); }
+  75% { transform: translateY(-150px) rotate(5deg) scale(1.05); }
+  100% { transform: translateY(-300px) rotate(-15deg) scale(0.8); opacity: 0; }
+}
+
+@keyframes chip-hover {
+  0%, 100% { transform: scale(1) rotateY(0deg); }
+  50% { transform: scale(1.05) rotateY(10deg); }
+}
+
+@keyframes neon-flicker {
+  0%, 100% { opacity: 1; }
+  92% { opacity: 1; }
+  93% { opacity: 0.8; }
+  94% { opacity: 1; }
+  96% { opacity: 0.9; }
+  97% { opacity: 1; }
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 2s ease-in-out infinite;
+}
+
+.animate-card-float {
+  animation: card-float 3s ease-in-out infinite;
+}
+
+.animate-neon-flicker {
+  animation: neon-flicker 4s ease-in-out infinite;
+}
+
+.neon-text-red {
+  text-shadow: 0 0 10px var(--neon-red), 0 0 20px var(--neon-red), 0 0 40px var(--neon-red);
+}
+
+.neon-text-orange {
+  text-shadow: 0 0 10px var(--neon-orange), 0 0 20px var(--neon-orange), 0 0 40px var(--neon-orange);
+}
+
+.neon-text-yellow {
+  text-shadow: 0 0 10px var(--neon-yellow), 0 0 20px var(--neon-yellow), 0 0 40px var(--neon-yellow);
+}
+
+.neon-text-pink {
+  text-shadow: 0 0 10px var(--neon-pink), 0 0 20px var(--neon-pink), 0 0 40px var(--neon-pink);
+}
+
+.neon-box-red {
+  box-shadow: 0 0 10px var(--neon-red), 0 0 20px var(--neon-red), inset 0 0 10px rgba(255, 80, 50, 0.1);
+}
+
+.neon-box-orange {
+  box-shadow: 0 0 10px var(--neon-orange), 0 0 20px var(--neon-orange), inset 0 0 10px rgba(255, 150, 50, 0.1);
+}
+
+.neon-box-pink {
+  box-shadow: 0 0 10px var(--neon-pink), 0 0 20px var(--neon-pink), inset 0 0 10px rgba(255, 100, 150, 0.1);
+}
+
+.neon-box-yellow {
+  box-shadow: 0 0 10px var(--neon-yellow), 0 0 20px var(--neon-yellow), inset 0 0 10px rgba(255, 200, 50, 0.1);
+}
+
+.glossy-bg {
+  background: linear-gradient(135deg, 
+    rgba(30, 20, 40, 0.95) 0%, 
+    rgba(15, 10, 25, 0.98) 50%, 
+    rgba(25, 15, 35, 0.95) 100%);
+}
+
+/* Playing card styles */
+.playing-card {
+  background: linear-gradient(145deg, #ffffff 0%, #f0f0f0 100%);
+  border-radius: 12px;
+  position: relative;
+}
+
+.playing-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  padding: 2px;
+  background: linear-gradient(135deg, var(--gold), var(--neon-orange), var(--neon-red));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
