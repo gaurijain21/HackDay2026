@@ -18,7 +18,7 @@ const leftEvents: Event[] = [
 ]
 
 const rightEvents: Event[] = [
-  { id: 5, title: "Lunch Break", time: "1:30 PM", icon: "🍕", suit: "clubs" },
+  { id: 5, title: "Lunch Break & Bartending", time: "1:30 PM", icon: "🍕", suit: "clubs" },
   { id: 6, title: "HackDay Submissions Due", time: "4:00 PM", icon: "💡", suit: "hearts" },
   { id: 7, title: "Hard deadline- Devpost Closing!", time: "4:15 PM", icon: "🎯", suit: "diamonds" },
   { id: 8, title: "Closing Ceremony and winners announced", time: "5:00 PM", icon: "🏆", suit: "spades" },
@@ -127,7 +127,7 @@ function SurpriseEvent() {
           </p>
           
           <div className="mt-4 px-4 py-2 bg-gold/10 rounded-full border border-gold/30">
-            <span className="text-xs sm:text-sm font-mono text-cyan-400">11:00 AM</span>
+            <span className="text-xs sm:text-sm font-mono text-cyan-400">2:00 PM</span>
             
           </div>
         </div>
