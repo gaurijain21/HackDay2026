@@ -3,9 +3,23 @@
 import { useState, useEffect, useCallback } from "react"
 import { cn } from "@/lib/utils"
 
+
 interface SlotMachineCountdownProps {
-  targetDate: Date
+  targetDate?: Date
   onComplete?: () => void
+}
+
+function getDefaultTargetDate() {
+  const now = new Date()
+  const target = new Date()
+
+  target.setHours(16, 15, 0, 0) // 4:15 PM
+
+  if (now > target) {
+    target.setDate(target.getDate() + 1)
+  }
+
+  return target
 }
 
 interface FlyingCard {
@@ -122,6 +136,7 @@ function FlyingCardElement({ card }: { card: FlyingCard }) {
 }
 
 export function SlotMachineCountdown({ targetDate, onComplete }: SlotMachineCountdownProps) {
+  const [finalTargetDate] = useState<Date>(() => targetDate ?? getDefaultTargetDate())
   const [timeLeft, setTimeLeft] = useState({ hours: "00", minutes: "00", seconds: "00" })
   const [isAnimating, setIsAnimating] = useState(false)
   const [isComplete, setIsComplete] = useState(false)
@@ -150,7 +165,8 @@ export function SlotMachineCountdown({ targetDate, onComplete }: SlotMachineCoun
   useEffect(() => {
     const calculateTimeLeft = () => {
       const now = new Date().getTime()
-      const target = targetDate.getTime()
+      
+      const target = finalTargetDate.getTime()
       const difference = target - now
 
       if (difference <= 0) {
@@ -179,7 +195,7 @@ export function SlotMachineCountdown({ targetDate, onComplete }: SlotMachineCoun
     }, 1000)
 
     return () => clearInterval(timer)
-  }, [targetDate, isComplete, triggerCelebration, onComplete])
+  }, [finalTargetDate, isComplete, triggerCelebration, onComplete])
 
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center px-4 py-12 overflow-hidden">

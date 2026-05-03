@@ -5,40 +5,40 @@ import { cn } from "@/lib/utils"
 const prizeTracks = [
   {
     id: 1,
-    name: "Prize 1?",
-    description: "",
+    name: "1st",
+    description: "by Vercel",
     icon: "♠",
     color: "red",
     winner: null,
   },
   {
     id: 2,
-    name: "Prize 2?",
-    description: "",
+    name: "2nd",
+    description: "By Vercel",
     icon: "♥",
     color: "orange",
     winner: null,
   },
   {
     id: 3,
-    name: "Prize 3?",
-    description: "",
+    name: "3rd",
+    description: "by Vercel",
     icon: "♦",
     color: "yellow",
     winner: null,
   },
   {
     id: 4,
-    name: "Prize 4?",
-    description: "",
+    name: "Community Favorite",
+    description: "By CruzHacks",
     icon: "♣",
     color: "pink",
     winner: null,
   },
   {
     id: 5,
-    name: "Prize 5?",
-    description: "",
+    name: "Short Form Content",
+    description: "By CruzHacks",
     icon: "★",
     color: "blue",
     winner: null,
@@ -210,7 +210,7 @@ export function Leaderboard() {
         </h2>
           
         
-        <p className="mt-4 text-muted-foreground text-lg">Spin the wheel of fortune</p>
+        <p className="mt-4 text-muted-foreground text-lg">Who wins the fortune?</p>
       </div>
 
       {/* Prize slots */}
