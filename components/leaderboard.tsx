@@ -105,20 +105,30 @@ function RouletteSlot({ track }: { track: (typeof prizeTracks)[0] }) {
         )}
       >
         {/* Roulette wheel segments (decorative) */}
-        <div className="absolute inset-2 rounded-full overflow-hidden opacity-20">
-          {[...Array(12)].map((_, i) => (
-            <div
-              key={i}
-              className={cn(
-                "absolute w-full h-full",
-                i % 2 === 0 ? "bg-zinc-800" : "bg-zinc-900"
-              )}
-              style={{
-                clipPath: `polygon(50% 50%, ${50 + 50 * Math.cos((i * 30 * Math.PI) / 180)}% ${50 + 50 * Math.sin((i * 30 * Math.PI) / 180)}%, ${50 + 50 * Math.cos(((i + 1) * 30 * Math.PI) / 180)}% ${50 + 50 * Math.sin(((i + 1) * 30 * Math.PI) / 180)}%)`,
-              }}
-            />
-          ))}
-        </div>
+        {[...Array(12)].map((_, i) => {
+        const round = (num: number) => Number(num.toFixed(4));
+
+        const angle1 = (i * 30 - 90) * (Math.PI / 180);
+        const angle2 = ((i + 1) * 30 - 90) * (Math.PI / 180);
+
+        const x1 = round(50 + 50 * Math.cos(angle1));
+        const y1 = round(50 + 50 * Math.sin(angle1));
+        const x2 = round(50 + 50 * Math.cos(angle2));
+        const y2 = round(50 + 50 * Math.sin(angle2));
+
+        return (
+          <div
+            key={i}
+            className={cn(
+              "absolute w-full h-full",
+              i % 2 === 0 ? "bg-zinc-900" : "bg-zinc-800"
+            )}
+            style={{
+              clipPath: `polygon(50% 50%, ${x1}% ${y1}%, ${x2}% ${y2}%)`,
+            }}
+          />
+        );
+      })}
 
         {/* Inner circle */}
         <div
