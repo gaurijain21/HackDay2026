@@ -5,12 +5,7 @@ import { Leaderboard } from "@/components/leaderboard"
 import { Organizers } from "@/components/organizers"
 
 export default function Home() {
-  // Set the target date to 3 hours from now for demo purposes
-  // Replace with your actual event date
-  const targetDate = new Date()
-  targetDate.setHours(targetDate.getHours() + 3)
-  targetDate.setMinutes(targetDate.getMinutes() + 12)
-  targetDate.setSeconds(targetDate.getSeconds() + 45)
+  const targetDate = new Date('2026-05-03T23:15:00Z') // 4:15 PM PST = 23:15 UTC
 
   return (
     <main className="min-h-screen">
