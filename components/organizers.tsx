@@ -3,18 +3,14 @@
 import { cn } from "@/lib/utils"
 
 const organizers = [
-  { name: "name1", role: "Lead Organizer", suit: "spades", rank: "A" },
-  { name: "name2", role: "Tech Lead", suit: "hearts", rank: "K" },
-  { name: "name3", role: "Design Lead", suit: "diamonds", rank: "Q" },
-  { name: "name4", role: "Marketing", suit: "clubs", rank: "J" },
-  { name: "name5", role: "Logistics", suit: "spades", rank: "K" },
-  { name: "name6", role: "Sponsorship", suit: "hearts", rank: "Q" },
-  { name: "name7", role: "Mentorship", suit: "diamonds", rank: "J" },
-  { name: "name8", role: "Workshop Lead", suit: "clubs", rank: "A" },
-  { name: "name9", role: "Social Media", suit: "spades", rank: "Q" },
-  { name: "name10", role: "Volunteer Coord", suit: "hearts", rank: "J" },
-  { name: "name11", role: "Food & Bev", suit: "diamonds", rank: "A" },
-  { name: "name12", role: "AV Tech", suit: "clubs", rank: "K" },
+  { name: "Heli Kadakia", role: "", suit: "spades", rank: "A" },
+  { name: "Ashwin Prabou", role: "", suit: "hearts", rank: "K" },
+  { name: "Gauri Jain", role: "", suit: "diamonds", rank: "Q" },
+  { name: "Samanyu Kumar", role: "", suit: "clubs", rank: "J" },
+  { name: "Jasmine Chau", role: "", suit: "spades", rank: "K" },
+  { name: "Kayden Phabmixay", role: "", suit: "hearts", rank: "Q" },
+  { name: "Prithika Venkatesh", role: "", suit: "diamonds", rank: "J" },
+  
 ]
 
 const suitSymbols: Record<string, string> = {

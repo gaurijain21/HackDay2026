@@ -249,7 +249,7 @@ export function SlotMachineCountdown({ targetDate, onComplete }: SlotMachineCoun
 
       {/* Subtitle */}
       <p className="mt-8 sm:mt-12 text-lg sm:text-xl md:text-2xl text-muted-foreground text-center max-w-md animate-pulse">
-        {isComplete ? "🎰 The games have begun! 🎰" : "Place your bets, the countdown is on!"}
+        {isComplete ? "🎰 The games have begun! 🎰" : "Place your bets, start your projects, the countdown is on! CruzHacks x Vercel"}
       </p>
 
       {/* Decorative cards */}

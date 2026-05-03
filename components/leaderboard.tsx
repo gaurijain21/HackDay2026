@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils"
 const prizeTracks = [
   {
     id: 1,
-    name: "Prize name 1",
+    name: "Prize 1?",
     description: "",
     icon: "♠",
     color: "red",
@@ -13,7 +13,7 @@ const prizeTracks = [
   },
   {
     id: 2,
-    name: "Social Impact",
+    name: "Prize 2?",
     description: "",
     icon: "♥",
     color: "orange",
@@ -21,7 +21,7 @@ const prizeTracks = [
   },
   {
     id: 3,
-    name: "Lorem",
+    name: "Prize 3?",
     description: "",
     icon: "♦",
     color: "yellow",
@@ -29,7 +29,7 @@ const prizeTracks = [
   },
   {
     id: 4,
-    name: "Best Beginner",
+    name: "Prize 4?",
     description: "",
     icon: "♣",
     color: "pink",
@@ -37,7 +37,7 @@ const prizeTracks = [
   },
   {
     id: 5,
-    name: "Presidents's Choice",
+    name: "Prize 5?",
     description: "",
     icon: "★",
     color: "blue",

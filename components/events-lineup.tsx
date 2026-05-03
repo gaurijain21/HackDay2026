@@ -11,15 +11,18 @@ interface Event {
 }
 
 const leftEvents: Event[] = [
-  { id: 1, title: "Opening Ceremony", time: "9:00 AM", icon: "🎭", suit: "hearts" },
-  { id: 2, title: "Team Formation", time: "10:00 AM", icon: "🤝", suit: "diamonds" },
-  { id: 3, title: "Workshop: AI Magic", time: "11:30 AM", icon: "🧠", suit: "clubs" },
+  { id: 1, title: "Check-in", time: "9:30 AM", icon: "🎭", suit: "hearts" },
+  { id: 2, title: "Welcome video from vercel + Onboarding", time: "10:15 AM", icon: "🤝", suit: "diamonds" },
+  { id: 3, title: "Opening ceremony", time: "10:15 AM", icon: "👩", suit: "spades" },
+  { id: 3, title: "Hacking starts!", time: "10:15 AM", icon: "🧠", suit: "spades" },  
 ]
 
 const rightEvents: Event[] = [
-  { id: 4, title: "Lunch Break", time: "1:00 PM", icon: "🍕", suit: "spades" },
-  { id: 5, title: "Mentorship Hour", time: "3:00 PM", icon: "💡", suit: "hearts" },
-  { id: 6, title: "Demo Prep", time: "5:00 PM", icon: "🎯", suit: "diamonds" },
+  { id: 5, title: "Lunch Break", time: "1:30 PM", icon: "🍕", suit: "clubs" },
+  { id: 6, title: "HackDay Submissions Due", time: "4:00 PM", icon: "💡", suit: "hearts" },
+  { id: 7, title: "Hard deadline- Devpost Closing!", time: "4:15 PM", icon: "🎯", suit: "diamonds" },
+  { id: 8, title: "Closing Ceremony and winners announced", time: "5:00 PM", icon: "🏆", suit: "spades" },
+  
 ]
 
 const suitSymbols = {
@@ -124,7 +127,7 @@ function SurpriseEvent() {
           </p>
           
           <div className="mt-4 px-4 py-2 bg-gold/10 rounded-full border border-gold/30">
-            <span className="text-xs sm:text-sm font-mono text-cyan-400">2:00 PM</span>
+            <span className="text-xs sm:text-sm font-mono text-cyan-400">11:00 AM</span>
             
           </div>
         </div>
