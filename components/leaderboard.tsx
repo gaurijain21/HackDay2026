@@ -43,6 +43,22 @@ const prizeTracks = [
     color: "blue",
     winner: null,
   },
+  {
+    id: 6,
+    name: "Best Overall project",
+    description: "By CruzHacks",
+    icon: "♥",
+    color: "red",
+    winner: null,
+  },
+  {
+    id: 7,
+    name: "Best Social Impact",
+    description: "By CruzHacks",
+    icon: "♠",
+    color: "yellow",
+    winner: null,
+  },
 ]
 
 const colorStyles: Record<string, { gradient: string; glow: string; border: string }> = {
