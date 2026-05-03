@@ -3,22 +3,22 @@
 import { cn } from "@/lib/utils"
 
 const teams = [
-  { name: "Code Royale", color: "red" },
-  { name: "Byte Blasters", color: "blue" },
-  { name: "Neural Knights", color: "green" },
-  { name: "Data Dragons", color: "purple" },
-  { name: "Syntax Sharks", color: "orange" },
-  { name: "Bug Hunters", color: "pink" },
-  { name: "Pixel Pirates", color: "teal" },
-  { name: "Logic Lords", color: "yellow" },
-  { name: "Stack Overflow", color: "indigo" },
-  { name: "Git Pushers", color: "emerald" },
-  { name: "Debug Demons", color: "rose" },
-  { name: "API Avengers", color: "cyan" },
-  { name: "Cache Kings", color: "amber" },
-  { name: "Query Queens", color: "violet" },
-  { name: "Loop Legends", color: "lime" },
-  { name: "Function Force", color: "fuchsia" },
+  { name: "LocalFlow", color: "red" },
+  { name: "SlugBuild", color: "blue" },
+  { name: "Classify", color: "green" },
+  { name: "Aide", color: "purple" },
+  { name: "CommunityOps Agent", color: "orange" },
+  { name: "Argus", color: "pink" },
+  { name: "Cold Reach", color: "teal" },
+  { name: "beevr", color: "yellow" },
+  { name: "SideBet", color: "indigo" },
+  { name: "BuildingNav", color: "emerald" },
+  { name: "SlugMind", color: "rose" },
+  { name: "AgentToSurf", color: "cyan" },
+  // { name: "Cache Kings", color: "amber" },
+  // { name: "Query Queens", color: "violet" },
+  // { name: "Loop Legends", color: "lime" },
+  // { name: "Function Force", color: "fuchsia" },
 ]
 
 const chipColors: Record<string, { bg: string; border: string; shadow: string; text: string }> = {
