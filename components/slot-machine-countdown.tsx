@@ -11,9 +11,10 @@ interface SlotMachineCountdownProps {
 
 function getDefaultTargetDate() {
   const now = new Date()
-  const target = new Date()
 
-  target.setHours(16, 15, 0, 0) // 4:15 PM
+  // Create target in LOCAL timezone
+  const target = new Date()
+  target.setHours(16, 15, 0, 0) // 4:15 PM local
 
   if (now > target) {
     target.setDate(target.getDate() + 1)
