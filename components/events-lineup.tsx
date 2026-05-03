@@ -14,7 +14,7 @@ const leftEvents: Event[] = [
   { id: 1, title: "Check-in", time: "9:30 AM", icon: "🎭", suit: "hearts" },
   { id: 2, title: "Welcome video from vercel + Onboarding", time: "10:15 AM", icon: "🤝", suit: "diamonds" },
   { id: 3, title: "Opening ceremony", time: "10:15 AM", icon: "👩", suit: "spades" },
-  { id: 3, title: "Hacking starts!", time: "10:15 AM", icon: "🧠", suit: "spades" },  
+  { id: 4, title: "Hacking starts!", time: "10:15 AM", icon: "🧠", suit: "spades" },  
 ]
 
 const rightEvents: Event[] = [

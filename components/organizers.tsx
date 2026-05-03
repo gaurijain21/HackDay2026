@@ -1,15 +1,17 @@
 "use client"
 
 import { cn } from "@/lib/utils"
+import Image from "next/image"
 
 const organizers = [
-  { name: "Heli Kadakia", role: "", suit: "spades", rank: "A" },
-  { name: "Ashwin Prabou", role: "", suit: "hearts", rank: "K" },
-  { name: "Gauri Jain", role: "", suit: "diamonds", rank: "Q" },
-  { name: "Samanyu Kumar", role: "", suit: "clubs", rank: "J" },
-  { name: "Jasmine Chau", role: "", suit: "spades", rank: "K" },
-  { name: "Kayden Phabmixay", role: "", suit: "hearts", rank: "Q" },
-  { name: "Prithika Venkatesh", role: "", suit: "diamonds", rank: "J" },
+  { name: "Heli Kadakia", role: "", suit: "spades", rank: "A" ,  image: "/images/heli.jpg"},
+  { name: "Ashwin Prabou", role: "", suit: "hearts", rank: "K" ,  image: "/images/ashwin.jpg"},
+  { name: "Gauri Jain", role: "", suit: "diamonds", rank: "Q",  image: "/images/gauri.jpg" },
+  { name: "Samanyu Kumar", role: "", suit: "clubs", rank: "J",  image: "/images/sam.jpg"},
+  { name: "Jasmine Chau", role: "", suit: "spades", rank: "K", image: "/images/jasmine.jpg" },
+  { name: "Kayden Phabmixay", role: "", suit: "hearts", rank: "Q", image: "/images/kayden.jpeg"},
+  { name: "Prithika Venkatesh", role: "", suit: "diamonds", rank: "J", image: "/images/prithika.jpg" },
+  { name: "Victor Cruz", role: "", suit: "clubs", rank: "A", image: "/images/victor.jpg" },
   
 ]
 
@@ -32,11 +34,13 @@ function PlayingCardProfile({
   role,
   suit,
   rank,
+  image,
 }: {
   name: string
   role: string
   suit: string
   rank: string
+  image: string
 }) {
   const suitSymbol = suitSymbols[suit]
   const suitColor = suitColors[suit]
@@ -79,18 +83,23 @@ function PlayingCardProfile({
         {/* Center content */}
         <div className="absolute inset-0 flex flex-col items-center justify-center p-4">
           {/* Profile picture placeholder */}
-          <div
-            className={cn(
-              "w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full",
-              "bg-gradient-to-br from-casino-dark to-casino-surface",
-              "border-4 border-gold/50",
-              "flex items-center justify-center",
-              "shadow-[inset_0_2px_10px_rgba(0,0,0,0.5)]",
-              "group-hover:border-gold transition-colors"
-            )}
-          >
-            <span className={cn("text-3xl sm:text-4xl", suitColor)}>{suitSymbol}</span>
-          </div>
+          
+            <div className={cn(
+                "w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-full overflow-hidden",
+                "border-4 border-gold/50",
+                "shadow-[0_0_15px_rgba(255,200,100,0.3)]",
+                "group-hover:border-gold transition-colors"
+              )}
+            >
+              <Image
+                src={image}
+                alt={name}
+                width={100}
+                height={100}
+                className="w-full h-full object-cover"
+              />
+            </div>
+          
 
           {/* Name */}
           <h3 className="mt-3 text-sm sm:text-base font-bold text-zinc-800 text-center leading-tight">
@@ -170,6 +179,7 @@ export function Organizers() {
                 role={organizer.role}
                 suit={organizer.suit}
                 rank={organizer.rank}
+                image={organizer.image}
               />
             </div>
           ))}
